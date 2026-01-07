@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación Funcional de las Neuronas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            overflow-x: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .synoptic-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .root {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .root::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background-color: #bdc3c7;
+        }
+        .branches {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            position: relative;
+        }
+        .branches::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 16.66%;
+            width: 66.66%;
+            height: 2px;
+            background-color: #bdc3c7;
+        }
+        .branch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            position: relative;
+        }
+        .branch::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background-color: #bdc3c7;
+        }
+        .node {
+            background-color: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .node:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #3498db;
+        }
+        .node h3 {
+            color: #2980b9;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .node p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .node .citations {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .sub-branches {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin-top: 20px;
+            position: relative;
+        }
+        .sub-branch {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .sub-branch::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: #bdc3c7;
+        }
+        .sub-node {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 10px 15px;
+            border-radius: 6px;
+            width: 100%;
+        }
+        .sub-node h4 {
+            margin: 0 0 5px 0;
+            color: #e67e22;
+            font-size: 1em;
+        }
+        .sub-node p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        .sub-node .citations {
+            font-size: 0.75em;
+            color: #95a5a6;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .connector {
+            position: absolute;
+            left: -22px;
+            top: 0;
+            bottom: 15px;
+            width: 2px;
+            background-color: #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CLASIFICACIÓN FUNCIONAL DE LAS NEURONAS</h1>
+        <div class="synoptic-chart">
+            <div class="root">TIPOS DE NEURONAS</div>
+            <div class="branches">
+                <div class="branch">
+                    <div class="node">
+                        <h3>NEURONAS SENSITIVAS (AFERENTES)</h3>
+                        <p><strong>Función Principal:</strong> Reciben estímulos del medio externo o interno y los llevan al SNC.</p>
+                        <p><strong>Detalle Funcional Clave:</strong> Incluyen subclases especializadas (nociceptores para dolor, mecanorreceptores para tacto, etc.).</p>
+                        <p class="citations">(Stratton et al., 2025; Zeng & Sanes, 2017; Spruston, 2008)</p>
+                    </div>
+                    <div class="sub-branches">
+                        <div class="connector"></div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Neuronas sensoriales entéricas (IPANS)</h4>
+                                <p><strong>Pertenece a:</strong> Sensitivas del sistema entérico</p>
+                                <p><strong>Función específica:</strong> Detectan distensión/químicos en intestino y disparan reflejos de motilidad colónica.</p>
+                                <p class="citations">(Gomez-Frittelli et al., 2025; Morarach et al., 2020)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <div class="node">
+                        <h3>NEURONAS MOTORAS (EFERENTES)</h3>
+                        <p><strong>Función Principal:</strong> Llevan órdenes desde SNC a músculos o glándulas.</p>
+                        <p><strong>Detalle Funcional Clave:</strong> Pueden ser somáticas (músculo esquelético) o viscerales/autonómicas (vísceras, p.ej. intestino).</p>
+                        <p class="citations">(Chen et al., 2023; Alkaslasi et al., 2020; Spruston, 2008)</p>
+                    </div>
+                    <div class="sub-branches">
+                        <div class="connector"></div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Neuronas motoras entéricas excitadoras</h4>
+                                <p><strong>Pertenece a:</strong> Motoras</p>
+                                <p><strong>Función específica:</strong> Activan músculo liso (contracción) en intestino; controlan motilidad y tránsito.</p>
+                                <p class="citations">(Chen et al., 2023)</p>
+                            </div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Neuronas motoras entéricas inhibitorias</h4>
+                                <p><strong>Pertenece a:</strong> Motoras</p>
+                                <p><strong>Función específica:</strong> Relajan músculo liso, coordinan ondas de propulsión y segmentación.</p>
+                                <p class="citations">(Chen et al., 2023)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="branch">
+                    <div class="node">
+                        <h3>INTERNEURONAS</h3>
+                        <p><strong>Función Principal:</strong> Conectan neuronas entre sí dentro del SNC (y plexos entéricos).</p>
+                        <p><strong>Detalle Funcional Clave:</strong> Integran información, modulan circuitos, permiten reflejos y patrones motores complejos.</p>
+                        <p class="citations">(Morarach et al., 2020; Chen et al., 2023; Dougherty, 2023; Huang et al., 2019; Pelkey et al., 2017)</p>
+                    </div>
+                    <div class="sub-branches">
+                        <div class="connector"></div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Interneuronas ascendentes entéricas</h4>
+                                <p><strong>Pertenece a:</strong> Interneuronas</p>
+                                <p><strong>Función específica:</strong> Transmiten señales a lo largo del intestino en dirección oral; coordinación de circuitos locales.</p>
+                                <p class="citations">(Chen et al., 2023; Morarach et al., 2020)</p>
+                            </div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Interneuronas descendentes entéricas</h4>
+                                <p><strong>Pertenece a:</strong> Interneuronas</p>
+                                <p><strong>Función específica:</strong> Transmiten información hacia región anal; parte de circuitos propulsores.</p>
+                                <p class="citations">(Chen et al., 2023)</p>
+                            </div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Interneuronas inhibitorias corticales (GABAérgicas)</h4>
+                                <p><strong>Pertenece a:</strong> Interneuronas SNC</p>
+                                <p><strong>Función específica:</strong> Modulan neuronas piramidales, controlan ganancia, selectividad a estímulos y oscilaciones de red.</p>
+                                <p class="citations">(Huang et al., 2019; Wood et al., 2017; Pelkey et al., 2017)</p>
+                            </div>
+                        </div>
+                        <div class="sub-branch">
+                            <div class="sub-node">
+                                <h4>Subtipo: Neuronas piramidales (glutamatérgicas)</h4>
+                                <p><strong>Pertenece a:</strong> Principal excitadora en corteza/hipocampo</p>
+                                <p><strong>Función específica:</strong> Integran múltiples sinapsis en su árbol dendrítico y envían la salida principal de la corteza/hipocampo.</p>
+                                <p class="citations">(Spruston, 2008; Pelkey et al., 2017)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
